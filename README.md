@@ -1,103 +1,25 @@
-# BHCG-TaskApp
-A simple, modern, full-stack task management web application built with React, Node.js, Express, and MongoDB, featuring a sleek dark-themed UI.
+# Launchpad Event Landing Page | E-Cell BITS Hyderabad
+A responsive, glassmorphism-inspired event webpage built for the E-Cell Tech Team induction task. The project aims to recreate a premium, dark-themed aesthetic with interactive 3D elements and smooth animations without relying on heavy external styling libraries.
 
-The Code for server is at [https://github.com/Virtuoso-2512/BHCG-TaskApp-Server](Server GitHub Repo) .
+Visit Website Here: [https://ecell-event-website.netlify.app/]
 
+# Technologies Used
+React.js: Core framework for component-based architecture and state management.
 
----
+# Approach & Architecture
+Glassmorphism Aesthetic: The visual identity relies heavily on CSS ```backdrop-filter: blur(), semi-transparent backgrounds (rgba)```, and subtle rim lighting (thin borders) to create depth and separation against the deep black background.
 
-## 🛠️ Tech Stack
+# CSS-Driven Physics & Animations:
+*Marquee & Hover States:* Infinite horizontal scrolling and card expansions are handled entirely via CSS `@keyframes` and  `transition` timing functions, ensuring high performance on the browser's render thread.
 
-* **Client:** React, React Router
-* **Backend:** Node.js, Express.js
-* **Database:** MongoDB, Mongoose
-* **Environment Management:** Dotenv, CORS, Nodemon
+*3D Rotating Surface:* The core mission mottos utilize CSS perspective combined with transform: `rotateX()` and `translateY()` to create the illusion of text physically rotating on a mechanical drum.
 
----
+*Streamlined Interactions:* The newsletter subscription form utilizes straightforward browser-native alerts `(window.alert)` to handle submission feedback, prioritizing functional simplicity and immediate execution over complex notification scripting.
 
-## ✨ Features & Functionality
+*Smooth Navigation:* In-page anchor links and specific UI triggers utilize the native `scrollIntoView({ behavior: 'smooth' })` DOM method to glide between sections seamlessly.
 
-* **Core CRUD Operations:** Create, view, and delete tasks seamlessly.
-* **Advanced Attributes:** Assign priorities (*High, Medium, Low*), statuses, and due dates to keep organized.
-* **Dynamic Search & Filtering:** Real-time search bar that filters tasks instantly.
-* **Modern UI/UX:** Dark-mode interface featuring a glowing pill search bar.
-
----
-
-## 🏗️ Architectural & Technical Decisions
-
-1. **Full-Stack with Future-Proofing (MERN):** 
-   * While built as a **single-user application** for this specific scope and time constraint, the Mongoose schema and controllers are explicitly structured with a `userId` relationship. This ensures that transitioning to a fully authenticated, multi-user environment (via JWT) requires minimal refactoring.
-2. **Modular Backend Structure:** 
-   * The backend adopts a clean Controller-Route-Model pattern (`server.js` -> `routes/` -> `controllers/` -> `models/` -> `config/`) to keep infrastructure configuration separate from core business logic.
-3. **Client Service Layer:** 
-   * API requests are completely isolated inside a dedicated services layer (`services/api.js`) to keep React components modular and testable.
-4. **Pragmatic UI Feedback:** 
-   * Relies on native browser interactions (`window.alert`, `window.confirm`) to handle edge cases cleanly and rapidly, avoiding heavy third-party dependency bloat and focusing effort on core requirements.
-
----
-
-## 📂 Project Folder Structure
-
-```text
-task-management-app/
-├── backend/
-│   ├── config/
-│   │   └── db.js                 # MongoDB connection setup
-│   ├── controllers/
-│   │   └── taskController.js     # CRUD business logic
-│   ├── models/
-│   │   └── taskModel.js          # Mongoose schema with future-proofed userId
-│   ├── .env                      # Environment variables (Port, Mongo URI)
-│   ├── server.js                 # Express app entry point
-│   └── package.json
-│
-└── Client/
-    ├── src/
-    │   ├── components/
-    │   │   ├── Home.jsx          # Main landing view with search & grid
-    │   │   └── SearchBar.jsx     # Glowing pill search bar component
-    │   │   └── (Similar Files)   
-    │   ├── services/
-    │   │   └── api.js            # Centralized fetch wrapper for backend calls
-    │   ├── App.jsx               # Root component & React Router setup
-    │   ├── Home.css              # Dark-theme layout styles
-    │   ├── SearchBar.css         # Search pill styles & radial glow effects
-    │   └── index.css             # Global reset styles
-    └── package.json
-```
-🚀 Getting Started & Setup Instructions
-Prerequisites
-Node.js installed on your machine
-
-A local MongoDB instance or a MongoDB Atlas connection string
-
-1. Clone the Repository
-
-2. Set Up and Run the Backend
-```bash
-cd backend
-npm install
-```
-
-Create a .env file inside the backend directory and add your configuration:
-```env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string_here
-```
-
-Start the development server with hot-reloading:
-
-```bash
-npm run dev
-```
-
-3. Set Up and Run the Client
-Open a new terminal window, navigate to the Client directory, and run:
-
-```bash
-cd Client
-npm install
-npm run start
-```
-The application will run locally at http://localhost:3000 and communicate with your Express API at http://localhost:5000.
+# Setup Instructions
+1. Initialize a new React project (e.g., via Create React App or Vite).
+2. Replace `App.jsx` and `App.css` with the provided component files.
+3. Run npm install for standard React dependencies.
+4. Run npm start (or npm run dev) to launch the development server on localhost.
