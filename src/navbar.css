@@ -1,0 +1,115 @@
+/* Premium Floating Glass Navbar */
+#navbar {
+  position: fixed;
+  top: 16px; /* Floating look rather than stuck to the absolute top edge */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%; /* Clean margin on left/right sides */
+  max-width: 1400px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  box-sizing: border-box;
+  z-index: 1000;
+  
+  /* Upgraded glassmorphism matched to portfolio theme */
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+#logo {
+  gap: 12px;
+}
+
+.logo-img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.title-container h2 {
+  font-family: "Nunito", "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* Navigation Links Area */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px; /* Clean whitespace instead of old pipe separators */
+  margin-right: 12px;
+}
+
+.nav-item {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #94a3b8; /* Soft muted gray for resting state */
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 4px 0;
+}
+
+/* Animated hover underline effect instead of basic color snap */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ea580c; /* Matches your portfolio primary glow tint */
+  transition: width 0.2s ease;
+}
+
+.nav-item:hover {
+  color: #ffffff;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* Interactive ERP Button */
+.erp-btn {
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.erp-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #ea580c;
+  box-shadow: 0 0 15px rgba(76, 201, 240, 0.2);
+}
+
+/* Responsive tweak for smaller screens */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none; /* In production you'd switch to a hamburger menu icon here */
+  }
+}
